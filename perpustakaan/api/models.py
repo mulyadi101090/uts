@@ -13,7 +13,7 @@ class Penulis(models.Model):
 
 class Buku(models.Model):
     judul = models.CharField(max_length=200)
-    penulis = models.ManyToManyField(Penulis, related_name='books')
+    penulis = models.ManyToManyField(Penulis, related_name='buku')
     keterangan = models.TextField(blank=True)
     tanggal_dipublis = models.DateField(null=True, blank=True)
     di_buat = models.DateTimeField(auto_now_add=True)
