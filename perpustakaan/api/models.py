@@ -33,8 +33,8 @@ class Pinjaman(models.Model):
         return self.nama
 
 class PinjamanBuku(models.Model):
-    pinjaman = models.ForeignKey(Pinjaman, on_delete=models.CASCADE)
-    buku = models.ForeignKey(Buku, on_delete=models.CASCADE)
+    pinjaman = models.ForeignKey(Pinjaman, on_delete=models.CASCADE, related_name='pinjaman_buku')
+    buku = models.ForeignKey(Buku, on_delete=models.CASCADE, related_name='pinjaman_buku')
     tanggal_pinjam = models.DateField()
     tanggal_pengembalian = models.DateField(null=True, blank=True)
     di_buat = models.DateTimeField(auto_now_add=True)
